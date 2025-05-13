@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: rhsso
+  namespace: argocd
+  labels:
+    rhsso: infra
+spec:
+  destination:
+    namespace: rhsso
+    name: in-cluster
+  project: rhsso
+  source:
+    path: '.'
+    helm:
+      valueFiles:
+        - 'values/hml.yaml'
+    repoURL: 'https://github.com/nsadriano/rhsso.git'
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - Replace=true
+    - ApplyOutOfSyncOnly=true
+    - PrunePropagationPolicy=foreground
+    - CreateNamespace=true
