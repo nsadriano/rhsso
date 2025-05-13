@@ -9,7 +9,7 @@ spec:
   destination:
     namespace: rhsso
     name: in-cluster
-  project: rhsso
+  project: default
   source:
     path: '.'
     helm:
