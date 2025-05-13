@@ -1,0 +1,34 @@
+rhsso:
+  instanceName: keycloak
+  label:
+    app: sso
+  route:
+    sso:
+      host: keycloak-rhsso.apps.cluster-j64jc.dynamic.redhatworkshops.io
+  env:
+    SSO_TRUSTSTORE_PASSWORD:
+      value: changeit
+    KEYCLOAK_POSTGRESQL_SERVICE_HOST:  
+      value: pgsqlhmg.unifor.br
+  service: 
+    type: ClusterIP
+    port: 8443
+  secrets:
+    credential-example-keycloak:
+      ADMIN_PASSWORD: 
+        value: QzM3X09la3hQTFJEb0E9PQ==
+      ADMIN_USERNAME: 
+        value: YWRtaW4=
+    keycloak-db-secret:
+      POSTGRES_DATABASE: 
+        value: cm9vdA==
+      POSTGRES_HOST: 
+        value: a2V5Y2xvYWstcG9zdGdyZXNxbA==
+      POSTGRES_PASSWORD: 
+        value: ZXhhbXBsZS1rZXljbG9hay1YbGs5ZnNUbVhHMnlaaS1hR1RpbXRjNW1wTlNiUVNqM1NRbkpIUFhnRkg0PQ==
+      POSTGRES_USERNAME: 
+        value: a2V5Y2xvYWs=
+      POSTGRES_VERSION: 
+        value: MTA=
+      SSLMODE:
+        value: ''

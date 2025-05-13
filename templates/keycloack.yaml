@@ -1,0 +1,36 @@
+apiVersion: keycloak.org/v1alpha1
+kind: Keycloak
+metadata:
+  labels:
+    app: {{ .Values.rhsso.label.app }}
+  name: {{ .Values.rhsso.instanceName }}
+spec:
+  external:
+    enabled: false
+  externalAccess:
+    enabled: true
+  externalDatabase:
+    enabled: true
+  instances: 1
+  keycloakDeploymentSpec:
+    experimental:
+      env:
+        - name: X509_CA_BUNDLE
+        - name: SSO_TRUSTSTORE
+          value: truststore.jks
+        - name: SSO_TRUSTSTORE_DIR
+          value: /mnt/truststore
+        - name: SSO_TRUSTSTORE_PASSWORD
+          value: {{ .Values.rhsso.env.SSO_TRUSTSTORE_PASSWORD.value | quote }}
+        - name: KEYCLOAK_POSTGRESQL_SERVICE_HOST
+          value: {{ .Values.rhsso.env.KEYCLOAK_POSTGRESQL_SERVICE_HOST.value | quote }}
+      volumes:
+        items:
+          - mountPath: /mnt/truststore
+            name: truststore
+            secrets:
+              - sso-truststore-secret
+    imagePullPolicy: Always
+  postgresDeploymentSpec:
+    imagePullPolicy: IfNotPresent
+  storageClassName: nfs-client
