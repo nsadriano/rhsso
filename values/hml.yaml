@@ -14,6 +14,9 @@ rhsso:
     type: ClusterIP
     port: 8443
   secrets:
+    ssoTruststoreSecret:
+      teste:
+        value: c2VjcmV0
     credentialExampleKeycloak:
       AdminPassword: 
         value: QzM3X09la3hQTFJEb0E9PQ==
