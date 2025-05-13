@@ -15,7 +15,6 @@ rhsso:
     port: 8443
   secrets:
     ssoTruststoreSecret:
-      teste:
         value: c2VjcmV0
     credentialExampleKeycloak:
       AdminPassword: 
