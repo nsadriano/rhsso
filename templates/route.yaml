@@ -1,9 +1,9 @@
 kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
-  name: {{ .Values.rhsso.service.port }}
+  name: {{ .Values.rhsso.instanceName }}
   labels:
-    app: {{ .Values.rhsso.service.port }}
+    app: {{ .Values.rhsso.instanceName }}
 spec:
   host: {{ .Values.rhsso.route.sso.host }}
   to:
