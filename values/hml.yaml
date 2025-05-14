@@ -30,6 +30,10 @@ rhsso:
         value: ZXhhbXBsZS1rZXljbG9hay1YbGs5ZnNUbVhHMnlaaS1hR1RpbXRjNW1wTlNiUVNqM1NRbkpIUFhnRkg0PQ==
       PostgresUsername: 
         value: a2V5Y2xvYWs=
+      PostrgresExternalAddress: 
+        value: MTcyLjIwLjAuODk=
+      Postrgres_ExternalPort: 
+        value: NTQzMg==
       PostgresVersion: 
         value: MTA=
       SSLMODE:
