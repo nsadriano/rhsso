@@ -32,7 +32,7 @@ rhsso:
         value: a2V5Y2xvYWs=
       PostrgresExternalAddress: 
         value: MTcyLjIwLjAuODk=
-      Postrgres_ExternalPort: 
+      PostrgresExternalPort: 
         value: NTQzMg==
       PostgresVersion: 
         value: MTA=
