@@ -6,9 +6,9 @@ rhsso:
     sso:
       host: keycloak-rhsso.apps.cluster-j64jc.dynamic.redhatworkshops.io
   env:
-    SSO_TRUSTSTORE_PASSWORD:
+    SsoTruststorePassword:
       value: changeit
-    KEYCLOAK_POSTGRESQL_SERVICE_HOST:  
+    KeycloakPostgresSqlServiceHost:  
       value: pgsqlhmg.unifor.br
   service: 
     type: ClusterIP

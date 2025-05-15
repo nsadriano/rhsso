@@ -21,9 +21,9 @@ spec:
         - name: SSO_TRUSTSTORE_DIR
           value: /mnt/truststore
         - name: SSO_TRUSTSTORE_PASSWORD
-          value: {{ .Values.rhsso.env.SSO_TRUSTSTORE_PASSWORD.value | quote }}
+          value: {{ .Values.rhsso.env.SsoTruststorePassword.value | quote }}
         - name: KEYCLOAK_POSTGRESQL_SERVICE_HOST
-          value: {{ .Values.rhsso.env.KEYCLOAK_POSTGRESQL_SERVICE_HOST.value | quote }}
+          value: {{ .Values.rhsso.env.KeycloakPostgresSqlServiceHost.value | quote }}
       volumes:
         items:
           - mountPath: /mnt/truststore
